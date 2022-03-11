@@ -1,0 +1,20 @@
+{
+	"id": "146e52f0-fd32-4814-8e58-8a3c0f4d5eb7",
+	"values": [
+		{
+			"key": "mongo",
+			"value": "http://localhost:3000",
+			"enabled": false
+		},
+		{
+			"key": "server",
+			"value": "http://localhost:3000",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"name": "My Workspace Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2022-03-11T23:00:25.555Z",
+	"_postman_exported_using": "Postman/9.14.0"
+}

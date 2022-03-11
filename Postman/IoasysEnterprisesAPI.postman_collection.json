@@ -1,0 +1,389 @@
+{
+	"info": {
+		"_postman_id": "978d7e37-52ab-43a2-87b4-fb9238ff7198",
+		"name": "IoasysEnterprisesAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Add Company",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"OMN Desenvolvimento Web\",\r\n  \"cnpj\": \"41.388.001/0001-32\",\r\n  \"address\": {\r\n    \"cep\": \"17350-000\",\r\n    \"city\": \"Igaraçu do Tietê\",\r\n    \"district\": \"Centro\",\r\n    \"street\": \"Av. da Saudade\",\r\n    \"number\": 420,\r\n    \"state\": \"São Paulo\"\r\n  },\r\n  \"contact\": {\r\n    \"phone\": \"551499999999\",\r\n    \"whatsapp\": \"551499999999\"\r\n  },\r\n  \"email\": \"omn@email.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/auth/sign_up",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"auth",
+								"sign_up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"omn@email.com\",\r\n    \"password\": \"456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}} /auth/sign_in",
+							"host": [
+								"{{server}} "
+							],
+							"path": [
+								"auth",
+								"sign_in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmJhZjAzNjVlZTMzNTRlZGViZjlhMCIsImlhdCI6MTY0NzAzMDAxOSwiZXhwIjoxNjQ3MTE2NDE5fQ.PgTEePeurQwOhcdoeOFMLFoZ0MZH1l9cKQP6nQURYKI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"omn@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/auth/forgot_password",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"auth",
+								"forgot_password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"omn@email.com\",\r\n    \"token\": \"8ee32298a80814c6dbe6aff05941b83c61a43784\",\r\n    \"password\": \"456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/auth/reset_password",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"auth",
+								"reset_password"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmJhZjAzNjVlZTMzNTRlZGViZjlhMCIsImlhdCI6MTY0NzAzMTUwOSwiZXhwIjoxNjQ3MTE3OTA5fQ.LtfYWFeI_EPgPEx4QiE71hGim69-Ikirqr9PzTmaUZ8",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Department",
+			"item": [
+				{
+					"name": "Show All Departments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmJhZjAzNjVlZTMzNTRlZGViZjlhMCIsImlhdCI6MTY0NzAzMDAxOSwiZXhwIjoxNjQ3MTE2NDE5fQ.PgTEePeurQwOhcdoeOFMLFoZ0MZH1l9cKQP6nQURYKI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/departments",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Department",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmJhZjAzNjVlZTMzNTRlZGViZjlhMCIsImlhdCI6MTY0NzAzMDAxOSwiZXhwIjoxNjQ3MTE2NDE5fQ.PgTEePeurQwOhcdoeOFMLFoZ0MZH1l9cKQP6nQURYKI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Recursos Humanos\",\r\n  \"description\": \"Responsável pelo Recrutamento, seleção, treinamento, remuneração e benefícios dos funcionários\",\r\n  \"employees\": [\r\n    {\r\n      \"name\": \"Aline da Silveira\",\r\n      \"contact\": {\r\n        \"phone\": \"5514989999999\",\r\n        \"whatsapp\": \"5514989999999\"\r\n      },\r\n      \"job\": \"Recruiter\",\r\n      \"assignedTo\": \"622baf0365ee3354edebf9a0\"\r\n    },\r\n    {\r\n      \"name\": \"Fátima A. M. Santos\",\r\n      \"contact\": {\r\n        \"phone\": \"5514989999999\",\r\n        \"whatsapp\": \"5514989999999\"\r\n      },\r\n      \"job\": \"Financial\",\r\n      \"assignedTo\": \"622baf0365ee3354edebf9a0\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/departments",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show One Department",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmJhZjAzNjVlZTMzNTRlZGViZjlhMCIsImlhdCI6MTY0NzAzMDAxOSwiZXhwIjoxNjQ3MTE2NDE5fQ.PgTEePeurQwOhcdoeOFMLFoZ0MZH1l9cKQP6nQURYKI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/departments/622bce8043a852dd630f5d54",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"departments",
+								"622bce8043a852dd630f5d54"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Department",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmJhZjAzNjVlZTMzNTRlZGViZjlhMCIsImlhdCI6MTY0NzAzMDAxOSwiZXhwIjoxNjQ3MTE2NDE5fQ.PgTEePeurQwOhcdoeOFMLFoZ0MZH1l9cKQP6nQURYKI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/departments/622bc54c9a8efcd854ae118d",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"departments",
+								"622bc54c9a8efcd854ae118d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Department",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmJhZjAzNjVlZTMzNTRlZGViZjlhMCIsImlhdCI6MTY0NzAzMDAxOSwiZXhwIjoxNjQ3MTE2NDE5fQ.PgTEePeurQwOhcdoeOFMLFoZ0MZH1l9cKQP6nQURYKI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Recursos Humanos\",\r\n  \"description\": \"Responsável pelo Recrutamento, seleção, treinamento, remuneração e benefícios dos funcionários\",\r\n  \"employees\": [\r\n    {\r\n      \"name\": \"Fátima A. M. Santos\",\r\n      \"contact\": {\r\n        \"phone\": \"5514989999999\",\r\n        \"whatsapp\": \"5514989999999\"\r\n      },\r\n      \"job\": \"Financial\",\r\n      \"assignedTo\": \"622baf0365ee3354edebf9a0\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/departments/622bce8043a852dd630f5d54",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"departments",
+								"622bce8043a852dd630f5d54"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmJhZjAzNjVlZTMzNTRlZGViZjlhMCIsImlhdCI6MTY0NzAzMTUwOSwiZXhwIjoxNjQ3MTE3OTA5fQ.LtfYWFeI_EPgPEx4QiE71hGim69-Ikirqr9PzTmaUZ8",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmEwMTE4ZGI5ZjBlZWU0MWQzYjk0MCIsImlhdCI6MTY0NzAwMjc5OSwiZXhwIjoxNjQ3MDg5MTk5fQ.4CJ8Px-Dy6d3DP71ucJuVvnzeGwqjV9-hjx7_Dm0S-4",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
