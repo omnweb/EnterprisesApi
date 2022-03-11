@@ -17,6 +17,14 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: "",
   },
+  passwordResetToken: {
+    type: String,
+    select:false
+  },
+  passwordResetExpire: {
+    type: Date,
+    select:false
+  },
   status: {
     type: String,
     default: ["user", "admin"],
