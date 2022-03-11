@@ -1,24 +1,29 @@
-const mongoose = require("mongoose");
+const mongoose = require("../../database/index");
+const bcrypt = require("bcryptjs");
 
 const CompanySchema = new mongoose.Schema({
   name: {
     type: String,
     require: true,
   },
-  register: {
+  cnpj: {
     type: String,
-    unique: true,
-    max: 14,
-    select:false,
+    require: true,
+    index: {
+      unique: true,
+    },
+    max: 18,
+    min: 18,
   },
   address: {
     cep: {
-      type: Number,
+      type: String,
       required: true,
     },
     city: {
       type: String,
       default: "",
+      required: true,
     },
     district: {
       type: String,
@@ -27,26 +32,25 @@ const CompanySchema = new mongoose.Schema({
     street: {
       type: String,
       default: "",
+      required: true,
     },
     number: {
       type: Number,
       min: 0,
     },
-    city: {
-      type: String,
-      default: "",
-    },
     state: {
       type: String,
       default: "",
+      required: true,
     },
   },
   contact: {
     phone: {
       type: Number,
       min: 0,
+      required: true,
     },
-    telephone: {
+    whatsapp: {
       type: Number,
       min: 0,
     },
@@ -61,17 +65,28 @@ const CompanySchema = new mongoose.Schema({
   password: {
     type: String,
     default: "",
+    required: true,
   },
-  active: {
+  passwordResetToken: {
     type: String,
-    default: ["ativo", "inativo"],
+    select: false,
+  },
+  passwordResetExpire: {
+    type: Date,
+    select: false,
   },
   criatedAt: {
-      type: Date,
-      default: Date.now,
-  }
-
+    type: Date,
+    default: Date.now,
+  },
 });
 
-const Company = mongoose.model('Company', CompanySchema);
+// Before saving encrypt the password
+CompanySchema.pre("save", async function (next) {
+  const hash = await bcrypt.hash(this.password, 10);
+  this.password = hash;
+
+  next();
+});
+const Company = mongoose.model("Company", CompanySchema);
 module.exports = Company;

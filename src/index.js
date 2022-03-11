@@ -3,11 +3,10 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-// Para interpretar requisições em json
+// To interpret json requests
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-require('./app/controllers/index')(app);
-
+require("./app/controllers/index")(app);
 
 app.listen(3000);

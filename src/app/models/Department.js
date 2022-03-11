@@ -1,6 +1,6 @@
 const mongoose = require("../../database/index");
 
-const ProjectSchema = new mongoose.Schema({
+const DepartmentSchema = new mongoose.Schema({
   title: {
     type: String,
     require: true,
@@ -9,16 +9,16 @@ const ProjectSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  // User reference
-  user: {
+  // Company references
+  company: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: "Company",
     require: true,
   },
-  tasks: [
+  employees: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Task",
+      ref: "Employee",
     },
   ],
   criatedAt: {
@@ -27,5 +27,5 @@ const ProjectSchema = new mongoose.Schema({
   },
 });
 
-const Project = mongoose.model("Project", ProjectSchema);
-module.exports = Project;
+const Department = mongoose.model("Department", DepartmentSchema);
+module.exports = Department;
