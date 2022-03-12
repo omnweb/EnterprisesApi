@@ -1,5 +1,5 @@
 node_modules
 src/config/auth.json
-src/config/mail.json
 src/models/Company.js
 src/models/Employee.js
+src/config/mail.json
