@@ -9,7 +9,7 @@ Endpoits were created for companies creation, password recovery with email token
 <p align="center">
   <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#-to use">To Use</a>&nbsp;&nbsp;&nbsp; |
+  <a href="#-use">Use</a>&nbsp;&nbsp;&nbsp; |
   <a href="#-autor">Autor</a>&nbsp;&nbsp;&nbsp;
 </p>
 
@@ -39,7 +39,7 @@ To start the api, in the terminal type the command "npm start"
 
 Now simply import the .json files with the route collection and the global variable to check the endpoits.
 
-## 💻 TO USE
+## 💻 USE
 
 Start by creating a company, through the Add Company route. In this way it is already possible to log in by the Sign in route.
 
