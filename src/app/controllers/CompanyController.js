@@ -1,5 +1,5 @@
 const express = require("express");
-const authMeddleware = require("../meddlewares/auth");
+const authMeddleware = require("../middlewares/auth");
 const Department = require("../models/Department");
 const Employee = require("../models/Employee");
 
@@ -97,7 +97,7 @@ router.put("/:departmentId", async (req, res) => {
 // Remove a department
 router.delete("/:departmentId", async (req, res) => {
   try {
-    const department = await Department.findByIdAndRemove(
+    await Department.findByIdAndRemove(
       req.params.departmentId
     );
     return res.send("The department has been removed");

@@ -22,7 +22,7 @@ router.post("/sign_up", async (req, res) => {
     return res.send({ company, token: tokenGenerator({ id: company.id }) });
   } catch (err) {
     res.status(400).send({
-      error: `Email address has already been used, ${err}`,
+      error: `Email address has already been used`,
     });
   }
 });
