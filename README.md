@@ -18,7 +18,7 @@ Endpoits were created for companies creation, password recovery with email token
 
 ## 🚀 Technologies
 
-Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
+This project was developed using the following technologies::
 
 - [Node.js](https://nodejs.org/en/)
 - [Express js](https://expressjs.com/pt-br/)
@@ -43,11 +43,9 @@ Now simply import the .json files with the route collection and the global varia
 
 Start by creating a company, through the Add Company route. In this way it is already possible to log in by the Sign in route.
 
-After registering the company it is possible to test the routes of "forgot_password", this route sends an email to the smtp registered at email.json, containing a token, which must be replaced within the "reset_passowd" route.At that time tbm is made the change to the new password.
+After registering the company it is possible to test the routes of "forgot_password", this route sends an email to the smtp registered at email.json, containing a token, which must be replaced within the "reset_passowd" route. At that time tbm is made the change to the new password.
 
 From here it is already possible to create, update and exude departments and employees, being only necessary to be logged into the api for this.
-
-cê pode visualizar o layout do projeto através dos links abaixo:
 
 ## 📝 Autor
 
